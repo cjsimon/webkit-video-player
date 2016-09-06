@@ -2,35 +2,31 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>Video Player</title>
-	<!--
-	<link href="node_modules/video.js/dist/video-js.css" rel="stylesheet" type="text/css">
-	<link href="node_modules/videojs-chromecast/dist/videojs-chromecast.css" rel="stylesheet" type="text/css">
-	-->
-	<link href="css/index.css" rel="stylesheet" type="text/css">
-	<!--
-	<script src="node_modules/video.js/dist/video.js"></script>
-	<script src="node_modules/videojs-chromecast/dist/videojs-chromecast.js"></script>
-	-->
-	<script src="http://www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
+	<title></title>
 	
-	<!-- Set the location of the flash SWF -->
-	<script>
-		videojs.setGlobalOptions({
-			flash: {
-				swf: 'node_modules/video.js/dist/video-js.swf'
-			}
-		});
-	</script>
+	<link rel="stylesheet" href="http://vjs.zencdn.net/4.9.1/video-js.css">
+	<link rel="stylesheet" href="css/progressTips.min.css">
+	<link rel="stylesheet" href="css/player.css">
+
+	<script src="js/jquery-3.1.0.min.js"></script>	
+	<script src="http://vjs.zencdn.net/4.9.1/video.js"></script>
+	<script src="js/hotkeys.min.js"></script>
+	<script src="js/progressTips.min.js"></script>
 </head>
 
 <body>
-	<div class="video-container">
-		<video id="video" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="none"
-		data-setup='{}'>
-			<source src="file:///C:\Users\csimon\Documents\Anime\Sunday Without God\Season 1\Kamisama no Inai Nichiyoubi (Sub) Episode 6.mp4" type='video/mp4'>
-			<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+	<div id="video-container">
+		<video id="video"
+			class="video-js vjs-default-skin vjs-big-play-centered"
+			preload="auto"
+			controls
+			autoplay 
+			data-setup='{"nativeControlsForTouch": false}'>
+			
+			<source src="test.mp4" type='video/mp4'>
 		</video>
 	</div>
+	
+	<script src="js/player.js"></script>
 </body>
 </html>
