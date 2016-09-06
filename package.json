@@ -1,0 +1,35 @@
+{
+	"name": "Video",
+	"main": "index.html",
+	"description": "Fullscreen Video Player",
+	"version": "0.1",
+	"keywords": [ "video" ],
+	"window": {
+		"title": "Video",
+		"icon": "images/icon.png",
+		"toolbar": true,
+		"frame": true,
+		"transparent": false,
+		"resizable": true,
+		"always-on-top": false,
+		"always_on_top": false,
+		"show_in_taskbar": true,
+		"focus": true,
+		"width": 240,
+		"height": 240,
+		"min_width": 240,
+		"min_height": 240,
+		"max_width": 240,
+		"max_height": 240
+	},
+	"webkit": {
+		"page-cache": false,
+		"java": false,
+		"plugin": false
+	},
+	"repositories": [{
+		"type": "git", 
+		"url": "https://github.com/cjsimon/nodewebkit.git",
+		"path": "/"
+	}]
+}

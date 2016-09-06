@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Video Player</title>
+	<!--
+	<link href="node_modules/video.js/dist/video-js.css" rel="stylesheet" type="text/css">
+	<link href="node_modules/videojs-chromecast/dist/videojs-chromecast.css" rel="stylesheet" type="text/css">
+	-->
+	<link href="css/index.css" rel="stylesheet" type="text/css">
+	<!--
+	<script src="node_modules/video.js/dist/video.js"></script>
+	<script src="node_modules/videojs-chromecast/dist/videojs-chromecast.js"></script>
+	-->
+	<script src="http://www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
+	
+	<!-- Set the location of the flash SWF -->
+	<script>
+		videojs.setGlobalOptions({
+			flash: {
+				swf: 'node_modules/video.js/dist/video-js.swf'
+			}
+		});
+	</script>
+</head>
+
+<body>
+	<div class="video-container">
+		<video id="video" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="none"
+		data-setup='{}'>
+			<source src="file:///C:\Users\csimon\Documents\Anime\Sunday Without God\Season 1\Kamisama no Inai Nichiyoubi (Sub) Episode 6.mp4" type='video/mp4'>
+			<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+		</video>
+	</div>
+</body>
+</html>
