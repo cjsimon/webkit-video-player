@@ -29,14 +29,8 @@ player.ready(function(){
 					return (e.which === FORWARD_SLASH_KEY);
 				},
 				handler: function() {
-					fullscreen = !fullscreen;
-					var seek_bar = document.getElementsByClassName("vjs-control-bar")[0];
-					if(fullscreen)
-					{
-						seek_bar.style.visibility = 'hidden';
-					} else {
-						seek_bar.style.visibility = 'visible';
-					}
+					var control = document.querySelector('.vjs-control-bar');
+					control.classList.toggle('fadeOut');
 				}
 			}
 		}
