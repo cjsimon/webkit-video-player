@@ -1,0 +1,14 @@
+[Platform]
+OS Tpyewin32
+OS Version: 10.0.14366
+OS Architecture: x64
+
+[Memory]
+Total (Bytes) 8468529152
+Tree (Bytes) 4596142080
+Free (%) 54.27
+
+[CPUs]
+No. of cores: 8
+CPU TypeIntel(R) Core(TM) i7-3630QM CPU @ 2.40GHz
+CPU TypeIntel(R) Core(TM) i7-3630QM CPU @ 2.40GHz

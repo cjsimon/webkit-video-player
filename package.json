@@ -2,41 +2,64 @@
   "name": "Video",
   "main": "index.html",
   "description": "Fullscreen Video Player",
-  "version": "0.1",
-  "keywords": [
-    "video"
-  ],
+  "version": "0.1.0",
+  "keywords": ["video"],
+  
   "window": {
     "title": "Video",
     "icon": "images/icon.png",
-    "toolbar": true,
-    "frame": true,
+    "fullscreen": false,
+    
+    "frame": false,
+    "toolbar": false,
     "transparent": false,
-    "resizable": true,
+    
+    "focus": true,
     "always-on-top": false,
     "always_on_top": false,
-    "show_in_taskbar": true,
-    "focus": true,
-    "width": 240,
-    "height": 240,
-    "min_width": 240,
-    "min_height": 240,
-    "max_width": 240,
-    "max_height": 240
+    
+    "position": "center",
+    "width": 640,
+    "height": 480,
+    
+    "resizable": true,
+    "min_width": 100,
+    "min_height": 100,
+    
+    "show": true,
+    "show_in_taskbar": true
   },
+  
   "webkit": {
     "page-cache": false,
     "java": false,
     "plugin": false
   },
+  
   "repositories": [
     {
       "type": "git",
-      "url": "https://github.com/cjsimon/nodewebkit/tree/master/videoplayer",
+      "url": "https://github.com/cjsimon/webkit-video-player",
       "path": "/"
     }
   ],
+  
+  "scripts": {
+    "start": "nw ."
+  },
+  
   "devDependencies": {
     "video.js": "^4.9.1"
-  }
+  },
+  
+  "maintainers":
+  [
+    {
+      "name": "Christopher Simon",
+      "email": "cjsimon333@gmail.com",
+      "web": "https://github.com/cjsimon/webkit-video-player"
+    }
+  ],
+  
+  "bugs": "https://github.com/cjsimon/webkit-video-player/issues"
 }
