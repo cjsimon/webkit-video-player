@@ -5,8 +5,8 @@ OS Architecture: x64
 
 [Memory]
 Total (Bytes) 8468529152
-Tree (Bytes) 4596142080
-Free (%) 54.27
+Tree (Bytes) 3180929024
+Free (%) 37.56
 
 [CPUs]
 No. of cores: 8
