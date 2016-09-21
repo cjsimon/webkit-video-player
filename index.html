@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
+	<meta charset="utf-8"/>
 	<title>Video Player</title>
 	
 	<link rel="stylesheet" href="http://vjs.zencdn.net/4.9.1/video-js.css">
 	<link rel="stylesheet" href="css/progressTips.min.css">
 	<link rel="stylesheet" href="css/player.css">
 
-	<script src="js/jquery.min.js"></script>    
+	<script>var DEBUG = false;</script>
+	<script src ="js/debug.js"></script>
+	<script src="js/jquery.min.js"></script>
 	<script src="http://vjs.zencdn.net/4.9.1/video.js"></script>
 	<script src="js/hotkeys.min.js"></script>
 	<script src="js/progressTips.min.js"></script>
@@ -17,18 +19,7 @@
 </head>
 
 <body>
-	<input style="/*display:none;*/" id="fileDialog" type="file" />
-	<button style="/*display:none;*/" id="start" type="button"/>Change Video</button>
-	<script>
-		function chooseFile(dom) {
-			var chooser = document.querySelector(dom);
-			chooser.addEventListener("change", function(evt) {
-				console.log(this.value);
-				alert(this.value);
-			}, false);
-		}
-		chooseFile('#fileDialog');
-	</script>
+	<input id="filebrowser" style="display:none;" type="file"/>
 	
 	<div id="video-container">
 		<video id="video"
