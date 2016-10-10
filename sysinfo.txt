@@ -1,12 +1,12 @@
 [Platform]
 OS Tpyewin32
-OS Version: 10.0.14366
+OS Version: 10.0.14393
 OS Architecture: x64
 
 [Memory]
 Total (Bytes) 8468529152
-Tree (Bytes) 3006869504
-Free (%) 35.51
+Tree (Bytes) 5169459200
+Free (%) 61.04
 
 [CPUs]
 No. of cores: 8

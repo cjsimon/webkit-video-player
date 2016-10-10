@@ -1,57 +1,34 @@
+var player = videojs('video');
+
 /**
  * @link http://www.html5rocks.com/en/tutorials/file/dndfiles/
  */
-var player = videojs('video');
-
 function filelistener(dom) {
 	var filebrowser = document.querySelector(dom);
 	filebrowser.addEventListener("change", function(evt) {
-		console.log(this.value);
-		alert(this.value);
+		console.log("Selected Video: " + this.value);
 		loadPlayer(this.value);
 	}, false);
 }
 filelistener('#filebrowser');
 
-var userActivity, activityCheck;
-
-player.on('mousemove', function(){
-	userActivity = true;
+// TODO: Fix play pause listener states
+this.isPlaying = false;
+player.on("pause", function () {
+	this.isPlaying = false;
 });
-
-activityCheck = setInterval(function() {
-	// Check to see if the mouse has been moved
-	if(userActivity) {
-		// Reset the activity tracker
-		userActivity = false;
-		// If the user state was inactive, set the state to active
-		if(player.userActive() === false) {
-			player.userActive(true);
-		}
-		// Clear any existing inactivity timeout to start the timer over
-		clearTimeout(inactivityTimeout);
-
-		// In X seconds, if no more activity has occurred 
-		// the user will be considered inactive
-		inactivityTimeout = setTimeout(function() {
-			// Protect against the case where the inactivity timeout can trigger
-			// before the next user activity is picked up  by the 
-			// activityCheck loop.
-			if(!userActivity) {
-				this.userActive(false);
-			}
-		}, 2000);
-	}
-}, 250);
+player.on("play", function () {
+	this.isPlaying = true;
+});
 
 function loadPlayer(videopath) {
 	player.ready(function() {
-		console.log("Loading Player");
+		console.log("Loading Player: " + videopath);
 		
 		// Dynamic video loading
 		// @link http://stackoverflow.com/a/16714206/2104168
 		player.src([
-			{type: "video/mp4", src: videopath + ".mp4"}
+			{type: "video/mp4", src: videopath} // + ".mp4"}
 		]);
 		
 		player.pause();
@@ -82,6 +59,7 @@ function loadPlayer(videopath) {
 				return event.which === F_KEY || event.altKey && event.which === ENTER_KEY;
 			},
 			
+			// TODO: Add delays to keys to prevent them from getting stuck
 			customKeys: {
 				simpleKey: {
 					key: function(e) {
@@ -99,6 +77,10 @@ function loadPlayer(videopath) {
 					},
 					handler: function() {
 						console.log("Open File");
+						// Pause the video while the file browser is open
+						if(player.isPlaying) {
+							player.pause();
+						}
 						var filebrowser = document.querySelector("#filebrowser");
 						filebrowser.click();
 					}
@@ -111,4 +93,4 @@ function loadPlayer(videopath) {
 	});
 }
 // TODO: Load a specified video on startup
-loadPlayer("");
+loadPlayer("http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4");
